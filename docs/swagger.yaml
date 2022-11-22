@@ -1,0 +1,56 @@
+info:
+  contact: {}
+paths:
+  /cluster-create:
+    post:
+      parameters:
+      - description: name
+        in: formData
+        name: name
+        required: true
+        type: string
+      - description: master_url
+        in: formData
+        name: master_url
+        required: true
+        type: string
+      - description: config
+        in: formData
+        name: config
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"code":200,"data":""}'
+          schema:
+            type: string
+      summary: 集群创建
+      tags:
+      - 私有方法
+  /cluster-node:
+    get:
+      parameters:
+      - description: name
+        in: query
+        name: name
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"code":200,"data":""}'
+          schema:
+            type: string
+      summary: 获取node节点
+      tags:
+      - 私有方法
+  /ping:
+    get:
+      responses:
+        "200":
+          description: '{"code":200,"data":""}'
+          schema:
+            type: string
+      summary: ping
+      tags:
+      - 测试方法
+swagger: "2.0"
