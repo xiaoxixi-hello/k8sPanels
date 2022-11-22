@@ -23,6 +23,6 @@ func Router() *gin.Engine {
 	r.GET("/cluster-node", service.GetNodes)
 
 	// deployment接口
-	
+	r.GET("/deployment-list", service.GetDeploymentList)
 	return r
 }
